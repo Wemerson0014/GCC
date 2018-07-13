@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import home
+from .views import listagem
 
 urlpatterns = [
-    path('', home),
+    path('', listagem, name='listagem_curriculos'),
 ]

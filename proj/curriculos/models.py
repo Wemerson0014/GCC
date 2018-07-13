@@ -1,12 +1,12 @@
 from django.db import models
 
 class Candidato(models.Model):
-    nome = models.CharField(max_length=50, default='')
-    sobrenome = models.CharField(max_length=50, default='')
-    experiencias = models.TextField(default='')
-    cargo = models.TextField(default='')
+    nome = models.CharField(max_length=50)
+    sobrenome = models.CharField(max_length=50)
+    experiencias = models.TextField()
+    cargo = models.TextField()
     pretensao_salarial = models.DecimalField(max_digits=6, decimal_places=3)
-    observacao = models.TextField(default='')
+    observacao = models.TextField()
 
 
     def __str__(self):

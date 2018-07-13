@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from .models import Candidato
 
-def home (request):
+def listagem (request):
     Candidatos = Candidato.objects.all()
-    return render(request, 'curriculos.html')
+    return render(request, 'curriculos.html', {'Candidatos': Candidato})
+
 
 
 

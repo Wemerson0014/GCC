@@ -5,9 +5,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Gestão e Controle de Currículos - GCC</title>
 </head>
 <body>
-    <h1>Currículos</h1>
+    <ul>
+        {% for candidato in candidatos %}
+            <a href="{% url 'update_candidato' candidato.id %}">
+                <li> {{ candidato.nome }}</li>
+            </a>
+        {% endfor%}
+    </ul>
+    <a href="{% url 'create_candidatos %}">Novo Cadastro</a>
 </body>
 </html>
