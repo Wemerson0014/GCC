@@ -9,12 +9,12 @@
 </head>
 <body>
     <ul>
-        {% for candidato in candidatos %}
+        {% for canditado in candidatos %}
             <a href="{% url 'update_candidato' candidato.id %}">
                 <li> {{ candidato.nome }}</li>
             </a>
-        {% endfor%}
+        {% endfor %}
     </ul>
-    <a href="{% url 'create_candidatos %}">Novo Cadastro</a>
+    <a href="{% url 'create_candidato' %}">Novo Cadastro</a>
 </body>
 </html>
