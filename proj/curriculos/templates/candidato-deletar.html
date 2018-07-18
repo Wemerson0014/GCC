@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tela de confirmação de exclusão de cadastro</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <h2>Você tem certeza que deseja remover o cadastro selecionado {{ candidato.nome }}? </h2>
+        <button type="submit">Confirmar</button>
+    </form>
+</body>
+</html>
