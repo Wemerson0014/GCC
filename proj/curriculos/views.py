@@ -19,13 +19,13 @@ def novo(request):
 
 def atualizar(request, id):
     candidatos = candidato.objects.get(id=id)
-    form = CandidatoForm(request.POST or None, instance=candidato)
+    form = CandidatoForm(request.POST or None, instance=candidatos)
 
     if form.is_valid():
         form.save()
         return redirect('listagem_curriculos')
 
-    return render(request, 'candidato-form.html', {'form': form, 'candidato': candidato})
+    return render(request, 'candidato-form.html', {'form': form, 'candidatos': candidatos})
 
 
 def deletar(request, id):
@@ -35,7 +35,7 @@ def deletar(request, id):
         candidatos.delete()
         return redirect('listagem_curriculos')
 
-    return render(request, 'candidato-deletar.html', {'candidato': candidato})
+    return render(request, 'candidato-deletar.html', {'candidatos': candidatos})
 
 
 

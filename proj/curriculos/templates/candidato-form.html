@@ -12,8 +12,8 @@
         <button type="submit">Salvar</button>
     </form>
 
-    {% if candidato %}
-        <a href="{% url 'deletar_curriculos' candidato.id %}">Deletar</a>
+    {% if candidatos %}
+        <a href="{% url 'deletar_curriculos' candidatos.id %}">Deletar</a>
     {% endif %}
 </body>
 </html>
