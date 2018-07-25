@@ -8,6 +8,8 @@
     <title>Gestão e Controle de Currículos - GCC</title>
 </head>
 <body>
+
+
     <ul>
         {% for candidato in candidatos %}
             <a href="{% url 'atualizar_curriculos' candidato.id %}">
@@ -16,5 +18,7 @@
         {% endfor %}
     </ul>
     <a href="{% url 'novo_curriculos' %}">Novo Cadastro</a>
+    <p></p>
+    <a href="{% url 'logout' %}">Sair</a>
 </body>
 </html>
