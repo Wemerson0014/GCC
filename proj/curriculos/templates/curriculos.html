@@ -1,24 +1,24 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gestão e Controle de Currículos - GCC</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
+{% block title %}Currículos {% endblock %}
 
-    <ul>
+{%block main %}
+    <h1>Listagem de currículos cadastrados</h1>
+  <ul>
         {% for candidato in candidatos %}
             <a href="{% url 'atualizar_curriculos' candidato.id %}">
                 <li> {{ candidato.nome }} </li>
             </a>
         {% endfor %}
     </ul>
-    <a href="{% url 'novo_curriculos' %}">Novo Cadastro</a>
+    <a href="{% url 'novo_curriculos' %}" class="btn btn-primary">Novo Cadastro</a>
     <p></p>
-    <a href="{% url 'logout' %}">Sair</a>
-</body>
-</html>
+    <a href="{% url 'logout' %}" class="btn btn-dark">Sair</a>
+
+{% endblock%}
+
+
+
+
+
+
