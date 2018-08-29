@@ -2,7 +2,7 @@
 
 {% block title %}Confirmação de exclusão de cadastro {% endblock %}
 
-{%block main %}
+{% block main %}
     <form method="post">
         {% csrf_token %}
         <h2>Você tem certeza que deseja remover o cadastro selecionado? </h2>

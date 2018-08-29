@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'curriculos',
     'home',
+    'bootstrapform',
 ]
 
 MIDDLEWARE = [
@@ -121,8 +122,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIR = [
-    'static'
+STATICFILES_DIRS = [
+    'statics',
 ]
 
 LOGIN_URL = '/login/'

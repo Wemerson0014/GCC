@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
 
-{% block title %}Gestão e Controle de Currículos, seja bem vindo! {% endblock %}
+{% block title %}GCC || Home {% endblock %}
 
 {%block main %}
 
-<h1>Gestão e Controle de Currículos, seja bem vindo!</h1>
+    <div class="row" style="margin-top: 25px; align=center">
+        <div class="col-6">
+            <h1>Gestão e Controle de Currículos, seja bem vindo!</h1>
+        </div>
+        <div class="col-6">
 
-    {% if user.is_authenticated %}
+        </div>
+        <div class="col-6">
+            {% if user.is_authenticated %}
         <p>Olá, {{ user.username }}</p>
-        <a href="{% url 'logout' %}">Sair</a>
-    {% else %}
-        <a href="{% url 'login' %}">Acessar</a>
-    {% endif %}
+        <a href="{% url 'logout' %}" class="btn btn-dark">Sair</a>
+            {% else %}
+        <a href="{% url 'login' %}" class="btn btn-info">Acessar</a>
+            {% endif %}
+        </div>
+    </div>
+
 
 {% endblock%}

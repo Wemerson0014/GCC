@@ -1,17 +1,38 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 
 {% block title %}Página de acesso ao sistema {% endblock %}
 
-{%block main %}
+{% block main %}
 
-    <h2>Login</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-info">Login</button>
-    </form>
 
-{% endblock%}
+    <div class="container"  style="margin-top: 25px">
+      <div class="row">
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+          <form method="post">
+            {% csrf_token %}
+            {{ form|bootstrap }}
+            <button type="submit" class="btn btn-info">Login</button>
+          </form>
+        </div>
+        <div class="col-sm">
+
+        </div>
+      </div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+          <span class="text-muted">teste</span>
+        </div>
+      </footer>
+{% endblock %}
+
 
 
 

@@ -2,13 +2,15 @@
 
 {% block title %}Currículos {% endblock %}
 
-{%block main %}
+{% block main %}
+
     <h1>Listagem de currículos cadastrados</h1>
-  <ul>
+  <ul class="list-group">
         {% for candidato in candidatos %}
-            <a href="{% url 'atualizar_curriculos' candidato.id %}">
-                <li> {{ candidato.nome }} </li>
-            </a>
+            <li class="list-group-item">
+                <a href="{% url 'atualizar_curriculos' candidato.id %}">{{ candidato.nome }}</a>
+            </li>
+
         {% endfor %}
     </ul>
     <a href="{% url 'novo_curriculos' %}" class="btn btn-primary">Novo Cadastro</a>
