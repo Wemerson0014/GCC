@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Formulário de Cadastro de Candidatos</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %} GCC || Cadastro/ Atualização {% endblock %}
+
+{% block main %}
+
     <h1>Novo/Atualização de cadastros</h1>
     <form method="POST">
         {% csrf_token %}
-        {{ form }}
-        <button type="submit">Salvar</button>
+        {{ form| bootstrap }}
+        <button type="submit" class="btn btn-info">Salvar</button>
     </form>
 
     {% if candidatos %}
-        <a href="{% url 'deletar_curriculos' candidatos.id %}">Deletar</a>
+        <p></p>
+        <a href="{% url 'deletar_curriculos' candidatos.id %}" class="btn btn-danger">Deletar</a>
     {% endif %}
-</body>
-</html>
+
+
+{% endblock %}

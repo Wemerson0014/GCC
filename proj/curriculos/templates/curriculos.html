@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Currículos {% endblock %}
+{% block title %} GCC || Currículos {% endblock %}
 
 {% block main %}
 
@@ -13,6 +13,7 @@
 
         {% endfor %}
     </ul>
+    <p></p>
     <a href="{% url 'novo_curriculos' %}" class="btn btn-primary">Novo Cadastro</a>
     <p></p>
     <a href="{% url 'logout' %}" class="btn btn-dark">Sair</a>
