@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import candidato
+from .models import Candidato
 from .forms import CandidatoForm
 
 @login_required
 def listagem(request):
-    candidatos = candidato.objects.all()
+    candidatos = Candidato.objects.all()
     return render(request, 'curriculos.html', {'candidatos': candidatos})
 
 
@@ -22,7 +22,7 @@ def novo(request):
 
 @login_required
 def atualizar(request, id):
-    candidatos = candidato.objects.get(id=id)
+    candidatos = Candidato.objects.get(id=id)
     form = CandidatoForm(request.POST or None, instance=candidatos)
 
     if form.is_valid():
@@ -34,7 +34,7 @@ def atualizar(request, id):
 
 @login_required
 def deletar(request, id):
-    candidatos = candidato.objects.get(id=id)
+    candidatos = Candidato.objects.get(id=id)
 
     if request.method == 'POST':
         candidatos.delete()

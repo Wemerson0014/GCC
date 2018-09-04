@@ -1,6 +1,6 @@
 from django.db import models
 
-class candidato(models.Model):
+class Candidato(models.Model):
     nome = models.CharField(max_length=50)
     sobrenome = models.CharField(max_length=50)
     experiencias = models.TextField()
@@ -11,6 +11,8 @@ class candidato(models.Model):
 
     def __str__(self):
         return self.nome
+
+
 
 
 

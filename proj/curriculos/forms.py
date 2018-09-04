@@ -1,7 +1,7 @@
 from django import forms
-from .models import candidato
+from .models import Candidato
 
 class CandidatoForm(forms.ModelForm):
     class Meta:
-        model = candidato
+        model = Candidato
         fields = ['nome', 'sobrenome', 'experiencias', 'cargo', 'pretensao_salarial', 'observacao']
