@@ -10,7 +10,17 @@ class Candidato(models.Model):
 
 
     def __str__(self):
-        return self.nome
+        return str(self.nome)
+
+
+
+
+
+
+
+
+
+
 
 
 

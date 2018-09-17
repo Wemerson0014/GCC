@@ -3,9 +3,11 @@ from django.contrib.auth.decorators import login_required
 from .models import Candidato
 from .forms import CandidatoForm
 
+
 @login_required
 def listagem(request):
     candidatos = Candidato.objects.all()
+
     return render(request, 'curriculos.html', {'candidatos': candidatos})
 
 
@@ -41,8 +43,3 @@ def deletar(request, id):
         return redirect('listagem_curriculos')
 
     return render(request, 'candidato-deletar.html', {'candidatos': candidatos})
-
-
-
-
-
